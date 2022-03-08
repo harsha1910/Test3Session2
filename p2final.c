@@ -10,17 +10,17 @@ F input_fraction()
     scanf("%d%d",&f.num,&f.den);
     return f;
 }
-F Largest_fraction(F f1,F f2,F f3)
+F smallest_fraction(F f1,F f2,F f3)
 {
     int cd=f1.den*f2.den*f3.den;
     int f1num=(f1.num*cd)/f1.den;
     int f2num=(f2.num*cd)/f2.den;
     int f3num=(f3.num*cd)/f3.den;
-    if(f1num>f2num && f1num>f3num)
+    if(f1num<f2num && f1num<f3num)
     {
         return f1;
     }
-    else if(f2num>f3num)
+    else if(f2num<f3num)
     {
         return f2;
     }
@@ -29,28 +29,28 @@ F Largest_fraction(F f1,F f2,F f3)
         return f3;
     }
 }
-void output(F f1,F f2,F f3,F largest)
+void output(F f1,F f2,F f3,F smallest)
 {
-    if(f1.num==largest.num && f1.den==largest.den)
+    if(f1.num==smallest.num && f1.den==smallest.den)
     {
-        printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,largest.num,largest.den);
+        printf("the smallest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,smallest.num,smallest.den);
     }
-    else if(f2.num==largest.num && f2.den==largest.den)
+    else if(f2.num==smallest.num && f2.den==smallest.den)
     {
-         printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,largest.num,largest.den);
+         printf("the smallest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,smallest.num,smallest.den);
     }
     else
     {
-         printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,largest.num,largest.den);
+         printf("the smallest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,smallest.num,smallest.den);
     }
 }
 int main()
 {
-    F f1,f2,f3,largest;
+    F f1,f2,f3,smallest;
     f1=input_fraction();
     f2=input_fraction();
     f3=input_fraction();
-    largest=Largest_fraction(f1,f2,f3);
-    output(f1,f2,f3,largest);
+    smallest=smallest_fraction(f1,f2,f3);
+    output(f1,f2,f3,smallest);
     return 0;
 }

@@ -1,4 +1,4 @@
-pwd
+ pwd
 /home/runner/Test3Session2-2
  gcc -g p2final.c
  gdb a.out
@@ -27,35 +27,33 @@ Breakpoint 1, main () at p2final.c:50
 50      f1=input_fraction();
 (gdb) n
 enter num,den 
- 2
-3
+ 1
+2
 51      f2=input_fraction();
 (gdb) n
 enter num,den 
- 4
-53
+ 3
+4
 52      f3=input_fraction();
 (gdb) n
 enter num,den 
- 6
+ 8
 9
-53      largest=Largest_fraction(f1,f2,f3);
+53      smallest=smallest_fraction(f1,f2,f3);
 (gdb) n
-54      output(f1,f2,f3,largest);
+54      output(f1,f2,f3,smallest);
 (gdb) n
 55      return 0;
 (gdb) s
-56  }
-(gdb) p
+56  }(gdb) p
 The history is empty.
 (gdb) c
 Continuing.
-the largest fraction among 2/3 , 4/53 and 6/9 is 6/9[Inferior 1 (process 347) exited normally]
+the smallest fraction among 1/2 , 3/4 and 8/9 is 1/2[Inferior 1 (process 34) exited normally]
 (gdb) l
 51      f2=input_fraction();
 52      f3=input_fraction();
-53      largest=Largest_fraction(f1,f2,f3);
-54      output(f1,f2,f3,largest);
+53      smallest=smallest_fraction(f1,f2,f3);
+54      output(f1,f2,f3,smallest);
 55      return 0;
-56  }
-(gdb) 
+56  }(gdb)
